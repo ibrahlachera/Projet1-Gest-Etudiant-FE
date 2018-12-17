@@ -1,0 +1,97 @@
+<br/>
+<br/>
+<br/>
+
+<div class="row mt-3">
+  <div class="col-md-5">
+    <h1 class="text-success">Ajouter un étudiant</h1>
+  </div>
+  <div class="col-md-7 text-right">
+      
+      <button class="btn btn-primary" routerLink="/etudiants"> <i class="fa fa-backward"></i>Retour à la page des étudiants</button>
+ 
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+
+  <form [formGroup]="form" enctype="multipart/form-data" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label for="cin">CIN</label>
+      <input formControlName="cin" type="text" name="cin" id="cin" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('cin').invalid && form.get('cin').touched">
+           This field is required!!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cne">CNE</label>
+      <input formControlName="cne" type="text" name="cne" id="cne" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('cne').invalid && form.get('cne').touched">
+           This field is required!!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fullname">Nom Complet</label>
+      <input formControlName="fullname" type="text" name="fullname" id="fullname" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('fullname').invalid && form.get('fullname').touched">
+           This field is required!!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input formControlName="email" type="text" name="email" id="email" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('email').invalid && form.get('email').touched">
+           This field is required!!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="anscol">Année Scolaire</label>
+      <input formControlName="anscol" type="text" name="anscol" id="anscol" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('anscol').invalid && form.get('anscol').touched">
+           This field is required!!
+      </div>
+      
+    </div>
+    <div class="form-group">
+      <label for="filiere">Filière</label>
+      <input formControlName="filiere" type="text" name="filiere" id="filiere" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('filiere').invalid && form.get('filiere').touched">
+           This field is required!!
+      </div>
+    </div>
+  
+
+    <div class="form-group">
+        <label for="image">Image</label>
+          <div>
+            <button class="btn btn-success"  type="button" (click)="filePicker.click()">Pick Image</button>
+            <input  type="file" #filePicker (change)="onImagePicked($event)" >
+          </div>
+          <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+            <img [src]="imagePreview" [alt]="form.value.title">
+          </div>
+
+        <div class="alert alert-danger" 
+          *ngIf="form.get('image').invalid && form.get('image').touched">
+           This field is required!!
+      </div>
+      </div>
+
+    <button class="btn btn-success btn-block">
+      <i class="fa fa-paper-plane"></i> Ajouter un nouveau étudiant
+    </button>
+
+  </form>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>

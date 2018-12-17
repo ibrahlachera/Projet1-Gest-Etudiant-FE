@@ -1,0 +1,63 @@
+<br/>
+<br/>
+<br/>
+
+<div class="row mb-3">
+  <div class="col-md-5">
+      <h3 class="text-success">Informations</h3>
+     
+  </div>
+  <div class="col-md-7 text-right">
+      <button class="btn btn-primary" routerLink="/etudiants"> <i class="fa fa-backward"></i>Retour à la page des étudiants</button>
+  </div>
+
+</div>
+<div class="row mt-3">
+  <div class="col-md-12">
+    <div class="card" >
+      <div class="row">
+        <div class="col-md-5">
+            <img class="rounded float-left" height="500px" width="400px" [src]="etudiant.image" [alt]="">
+        </div>
+        <div class="col-md-7">
+            <div class="card-body">
+                <h5 class="card-title">{{etudiant.fullname}}</h5>
+                <p class="card-text">Un étudiant du Master {{etudiant.filiere}}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">CIN: {{etudiant.cin}}</li>
+                <li class="list-group-item">CNE: {{etudiant.cne}}</li>
+                <li class="list-group-item">Email: {{etudiant.email}}</li>
+                <li class="list-group-item">Année Scolaire: {{etudiant.anscol}}</li>
+              </ul>
+        </div>
+      </div>
+      <button class="btn btn-primary block"  [routerLink]="['/etudiants/addnote', etudiant._id]">Ajouter une note</button>
+      <button class="btn btn-warning block" (click)="suppEtud(etudiant._id)"><i class="fa fa-trash" ></i>Supprimer</button>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 mx-auto">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Matière</th>
+              <th scope="col">Semestre</th>
+              <th scope="col">Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let notes of etudiant.notes">
+              <td>{{notes.matiere}}</td>
+              <td>{{notes.semestre}}</td>
+              <td>{{notes.note}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+

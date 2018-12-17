@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+   
+    <div class="card card-signin my-5">
+      <div class="card-body">
+          <div class="col-md-3 mx-auto">
+              <i class="fa fa-user-circle-o fa-5x text-center" aria-hidden="true"></i>
+          </div>
+        <h5 class="card-title text-center">Se connecter</h5>
+        <form class="form-signin">
+          <div class="form-label-group">
+            <label for="userName">Nom d'utilisateur</label>
+            <input [(ngModel)]="enseignant.userName" type="userName" id="userName" name="userName" class="form-control" placeholder="userName" required>
+            
+          </div>
+
+          <div class="form-label-group mt-3">
+              <label for="password">Mot de passe</label>
+            <input [(ngModel)]="enseignant.password" type="password" id="password" name="password" class="form-control" placeholder="password" required>
+            
+          </div>
+
+        
+          <button class="btn btn-lg btn-primary btn-block mt-3" type="submit" (click)="log()">Se connecter</button>
+         
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

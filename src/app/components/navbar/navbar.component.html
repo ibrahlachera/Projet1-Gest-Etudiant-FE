@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-dark">
+  <span class="navbar-brand mb-0 h1 text-primary">Gestion des étudiants</span>
+  <form class="form-inline my-2 my-lg-0">
+      <ul class="nav nav-pills nav-fill ml-auto" *ngIf="!ensAutenticated"> 
+         <li class="nav-item">
+            <a routerLink="/login" class="nav-link"> <i class="fa fa-lock"></i> Login</a>
+          </li>
+        </ul>
+    
+        <ul class="nav nav-pills nav-fill ml-auto" *ngIf="ensAutenticated">
+          <li class="nav-item">
+            <button class="nav-link btn btn-link" (click)="logout()"> Logout</button>
+          </li>
+    
+        </ul>
+  </form>
+</nav>

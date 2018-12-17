@@ -1,0 +1,25 @@
+<br/>
+<br/>
+<br/>
+<div class="row">
+  <div class="col-md-5">
+    <h1> Ajouter une note :</h1>
+  </div>
+  <div class="col-md-7 text-right">
+      
+          <button class="btn btn-primary" routerLink="/etudiants"> <i class="fa fa-backward"></i>Retour à la page des étudiants</button>
+     
+  </div>
+</div>
+
+<form  #f="ngForm">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Matière: <input [(ngModel)]="notes.matiere"  name="matiere" type="matiere" class="form-control" id="matiere"></li>
+    <li class="list-group-item">Semestre: <input [(ngModel)]="notes.semestre" name="semestre" type="semestre" class="form-control" id="semestre"> </li>
+    <li class="list-group-item">Note: <input [(ngModel)]="notes.note" name="note" type="note" class="form-control" id="note"></li>
+    <li class="list-group-item"><button class="btn btn-success block" (click)="addNotes(f)">Ajouter la note</button></li>
+
+  </ul>
+    
+
+</form>

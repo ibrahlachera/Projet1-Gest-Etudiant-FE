@@ -1,0 +1,65 @@
+<br/>
+<br/>
+<br/>
+
+<div class="row mt-3">
+  <div class="col-md-5">
+    <h1 class="text-success">Modifier un étudiant</h1>
+  </div>
+  <div class="col-md-7 text-right">
+      
+      <button class="btn btn-primary" routerLink="/etudiants"> <i class="fa fa-backward"></i>Retour à la page des étudiants</button>
+ 
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+
+  <form [formGroup]="form" enctype="multipart/form-data" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label for="cin">CIN</label>
+      <input [(ngModel)]="etudiant.cin" formControlName="cin" type="text" name="cin" id="cin" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('cin').invalid && form.get('cin').touched">
+           This field is required!!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cne">CNE</label>
+      <input [(ngModel)]="etudiant.cne" formControlName="cne" type="text" name="cne" id="cne" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('cne').invalid && form.get('cne').touched">
+           This field is required!!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fullname">Nom Complet</label>
+      <input [(ngModel)]="etudiant.fullname" formControlName="fullname" type="text" name="fullname" id="fullname" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('fullname').invalid && form.get('fullname').touched">
+           This field is required!!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input [(ngModel)]="etudiant.email" formControlName="email" type="text" name="email" id="email" class="form-control">
+      <div class="alert alert-danger" 
+          *ngIf="form.get('email').invalid && form.get('email').touched">
+           This field is required!!
+      </div>
+    </div>
+    
+    
+
+    <button class="btn btn-success btn-block">
+      <i class="fa fa-paper-pencil"></i> Modifier cet étudiant
+    </button>
+
+  </form>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>

@@ -1,0 +1,40 @@
+<div class="row mt-5">
+  <div class="col-md-6">
+    <h1  class="text-success">Liste des étudiants:</h1> 
+  </div>
+<div class="col-md-6 text-right">
+  <button class="btn btn-success" routerLink="/etudiants/add"><i class="fa fa-plus"></i>Ajouter un étudiant</button>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="row">
+  <div class="col-md-12 mx-auto">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+            <th scope="col"></th>
+          <th scope="col">Nom et Prénom</th>
+          <th scope="col">CIN</th>
+          <th scope="col">CNE</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let etud of etudiants">
+            <td><i class="fa fa-user-circle fa-3x"></i></td>
+          <td>{{etud.fullname}}</td>
+          <td>{{etud.cin}}</td>
+          <td>{{etud.cne}}</td>
+          <td>
+            <button class="btn btn-danger ml-2" [routerLink]="['/etudiants/show', etud._id]"><i class="fa fa-plus"></i>Plus d'infos</button>
+            <button class="btn btn-warning ml-2" [routerLink]="['/etudiants/edit', etud._id]"><i class="fa fa-pencil"></i>Modifier</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--  -->
